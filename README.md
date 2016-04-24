@@ -113,6 +113,7 @@ Number of trips in Month
 
 #### Extra Commands Used
 `timeOfTrip <- format(as.POSIXct(dtrips$starttime) ,format = "%H:%M")`
+
 `dateOfTrip <- as.Date(dtrips$starttime)`
 
 
