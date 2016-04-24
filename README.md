@@ -1,15 +1,18 @@
 # BigDataAssignments
-Hour of Day trips
+##Hour of Day trips
 Find number of trips based on hour of the day.
 
-Scripts to find Hour of Day:
-# get Hour from startTime field
-> hourOfDay<-format(as.POSIXct(dtrips$starttime) ,format = "%H")
-# do group using table command
-> groupByHour<-table(hourOfDay)
+###### Scripts to find Hour of Day:
+*Get Hour from startTime field*
 
-Command:
-> barplot((groupByHour), beside = TRUE, col = c("green", "black"),main="Hour of Day",ylab="Freq")
+`> hourOfDay<-format(as.POSIXct(dtrips$starttime) ,format = "%H")`
+
+*do group using table command*
+
+`> groupByHour<-table(hourOfDay)`
+
+###### Command:
+`> barplot((groupByHour), beside = TRUE, col = c("green", "black"),main="Hour of Day",ylab="Freq")`
  
  
 Day Of Week :
