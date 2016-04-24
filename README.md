@@ -3,8 +3,6 @@ Hour of Day trips
 Find number of trips based on hour of the day.
 
 Scripts to find Hour of Day:
-timeOfTrip <- format(as.POSIXct(dtrips$starttime) ,format = "%H:%M")
-dateOfTrip <- as.Date(dtrips$starttime)
 # get Hour from startTime field
 > hourOfDay<-format(as.POSIXct(dtrips$starttime) ,format = "%H")
 # do group using table command
@@ -12,6 +10,23 @@ dateOfTrip <- as.Date(dtrips$starttime)
 
 Command:
 > barplot((groupByHour), beside = TRUE, col = c("green", "black"),main="Hour of Day",ylab="Freq")
+ 
+ 
+Day Of Week :
+Number Of trips for day of week.
+
+Script:
+#Get Day name form date
+> dayOfWeek<-(weekdays(as.Date(dateOfTrip,'%d-%m-%Y')))
+# Use data frame to convert vector  
+> d<-data.frame(dayOfWeek)
+# Provide Order
+> d$dayOfWeek<-factor(d$dayOfWeek,levels=c("Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+# Create Group By variable
+> groupByDayOfWeek<-table(d[order(d$dayOfWeek),])
+Command:
+> barplot(groupByDayOfWeek,main="Day Of Week",ylab="Freq")
+
  
 Top Station trips
 Find Stations who had highest and lowest number of trips.
@@ -65,5 +80,24 @@ Almost half of the user do not provide their Gender information.
 Command:
 > barplot(table(dtrips$gender),ylab="Frequency",main="Gender Of People",xla="Gender",ylim=c(0,500000))
 
-Following Command is used to remove exponential Number Formate  
+ 
+Month:
+Number of trips in Month
 
+Script:
+> month <- format(as.POSIXct(dtrips$starttime) ,format = "%m")
+> View(month)
+> groupByMonth<-table(month)
+
+Command:
+> barplot(groupByMonth,main="Month Trips",ylab="Freq")
+
+ 
+ 
+Following Command is used to remove exponential Number Format  
+
+Extra Commands Used:
+timeOfTrip <- format(as.POSIXct(dtrips$starttime) ,format = "%H:%M")
+dateOfTrip <- as.Date(dtrips$starttime)
+
+> options(scipen = 999)
