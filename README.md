@@ -15,20 +15,28 @@ Find number of trips based on hour of the day.
 `> barplot((groupByHour), beside = TRUE, col = c("green", "black"),main="Hour of Day",ylab="Freq")`
  
  
-Day Of Week :
+## Day Of Week :
 Number Of trips for day of week.
 
-Script:
-#Get Day name form date
-> dayOfWeek<-(weekdays(as.Date(dateOfTrip,'%d-%m-%Y')))
-# Use data frame to convert vector  
-> d<-data.frame(dayOfWeek)
-# Provide Order
-> d$dayOfWeek<-factor(d$dayOfWeek,levels=c("Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
-# Create Group By variable
-> groupByDayOfWeek<-table(d[order(d$dayOfWeek),])
-Command:
-> barplot(groupByDayOfWeek,main="Day Of Week",ylab="Freq")
+###### Script:
+*Get Day name form date*
+
+`> dayOfWeek<-(weekdays(as.Date(dateOfTrip,'%d-%m-%Y')))`
+
+*Use data frame to convert vector*  
+
+`> d<-data.frame(dayOfWeek)`
+
+*Provide Order*
+
+`> d$dayOfWeek<-factor(d$dayOfWeek,levels=c("Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))`
+
+*Create Group By variable*
+
+`> groupByDayOfWeek<-table(d[order(d$dayOfWeek),])`
+
+###### Command:
+`> barplot(groupByDayOfWeek,main="Day Of Week",ylab="Freq")`
 
  
 Top Station trips
