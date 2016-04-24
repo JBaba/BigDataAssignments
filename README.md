@@ -39,76 +39,80 @@ Number Of trips for day of week.
 `> barplot(groupByDayOfWeek,main="Day Of Week",ylab="Freq")`
 
  
-Top Station trips
+## Top Station trips
 Find Stations who had highest and lowest number of trips.
 
-Scripts To Find Top 5 City:
-# Get Grouped values for all stations.
-> groupByStation←table(dtrips$to_station_name)
+## Scripts To Find Top 5 City:
+*Get Grouped values for all stations.*
 
-# Preapre Descending Order Vector 
->  orderByFreqDesc=order(-groupByStation)
+`> groupByStation←table(dtrips$to_station_name)`
 
-# Apply Desc Order Function to our Stations.
-> View(groupByStation[orderByFreqDesc])
-> top5City <- c(groupByStation[orderByFreq][1:5])
-Command:
-> barplot(top5City,main="Top 5 City Trips",ylab="Freq",ylim=c(0,20000))
+*Preapre Descending Order Vector* 
 
-Scripts To Find Bottom 5 City:
+`> orderByFreqDesc=order(-groupByStation)`
 
-# Get Grouped values for all stations.
-> groupByStation←table(dtrips$to_station_name)
+*Apply Desc Order Function to our Stations.*
 
-# Make Order Vector					
-> orderByFreq=order(groupByStation)	
+`> View(groupByStation[orderByFreqDesc])`
+`> top5City <- c(groupByStation[orderByFreq][1:5])`
+
+###### Command:
+`> barplot(top5City,main="Top 5 City Trips",ylab="Freq",ylim=c(0,20000))`
+
+## Scripts To Find Bottom 5 City:
+
+*Get Grouped values for all stations.*
+
+`> groupByStation←table(dtrips$to_station_name)`
+
+*Make Order Vector*
+
+`> orderByFreq=order(groupByStation)`	
 	
-# Apply Order Function to our Stations.
-> View(groupByStation[orderByFreq])		
-> bottom5City <- c(groupByStation[orderByFreq][1:5])
+*Apply Order Function to our Stations.*
 
-Command:
-> barplot(bottom5City,main="Bottom 5 City Trips",ylab="Freq",ylim=c(0,100))
+`> View(groupByStation[orderByFreq])`		
+`> bottom5City <- c(groupByStation[orderByFreq][1:5])`
 
-
-Trips Per Station:x <- c(5:1, 6:8, 12:9)
-Graph shows number of trips per stations.
-Command:
-> barplot(table(dtrips$to_station_name),ylab="Frequency",main="Frequency Per Station",xla="Station Name",ylim=c(0,20000))
+###### Command:
+`> barplot(bottom5City,main="Bottom 5 City Trips",ylab="Freq",ylim=c(0,100))`
 
 
-User Type Graph:
-Graph shows Roughly equal number of Customer and Subscribers.  
-Command:
- > barplot(table(dtrips$usertype),ylab="Frequency",main="Types Of User",xla="UserType",ylim=c(0,500000))
+## Trips Per Station:
+*Graph shows number of trips per stations.*
+######Command:
+`> barplot(table(dtrips$to_station_name),ylab="Frequency",main="Frequency Per Station",xla="Station Name",ylim=c(0,20000))`
 
 
+## User Type Graph:
+*Graph shows Roughly equal number of Customer and Subscribers.*
+###### Command:
+`> barplot(table(dtrips$usertype),ylab="Frequency",main="Types Of User",xla="UserType",ylim=c(0,500000))`
 
 
-
-Gender Graph:
-Almost half of the user do not provide their Gender information.
-Command:
-> barplot(table(dtrips$gender),ylab="Frequency",main="Gender Of People",xla="Gender",ylim=c(0,500000))
-
+## Gender Graph:
+*Almost half of the user do not provide their Gender information.*
+###### Command:
+`> barplot(table(dtrips$gender),ylab="Frequency",main="Gender Of People",xla="Gender",ylim=c(0,500000))`
  
-Month:
+##Month:
 Number of trips in Month
 
-Script:
-> month <- format(as.POSIXct(dtrips$starttime) ,format = "%m")
-> View(month)
-> groupByMonth<-table(month)
+###### Script:
+`> month <- format(as.POSIXct(dtrips$starttime) ,format = "%m")`
+`> View(month)`
+`> groupByMonth<-table(month)`
 
-Command:
-> barplot(groupByMonth,main="Month Trips",ylab="Freq")
+###### Command:
+`> barplot(groupByMonth,main="Month Trips",ylab="Freq")`
 
  
  
-Following Command is used to remove exponential Number Format  
+##Following Command is used to remove exponential Number Format  
+`> options(scipen = 999)`
 
-Extra Commands Used:
-timeOfTrip <- format(as.POSIXct(dtrips$starttime) ,format = "%H:%M")
-dateOfTrip <- as.Date(dtrips$starttime)
+##Extra Commands Used:
+`timeOfTrip <- format(as.POSIXct(dtrips$starttime) ,format = "%H:%M")`
+`dateOfTrip <- as.Date(dtrips$starttime)`
 
-> options(scipen = 999)
+
