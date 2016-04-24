@@ -2,7 +2,7 @@
 ##Hour of Day trips
 Find number of trips based on hour of the day.
 
-###### Scripts to find Hour of Day:
+###### Scripts to find Hour of Day
 *Get Hour from startTime field*
 
 `> hourOfDay<-format(as.POSIXct(dtrips$starttime) ,format = "%H")`
@@ -11,14 +11,14 @@ Find number of trips based on hour of the day.
 
 `> groupByHour<-table(hourOfDay)`
 
-###### Command:
+###### Command
 `> barplot((groupByHour), beside = TRUE, col = c("green", "black"),main="Hour of Day",ylab="Freq")`
  
  
-## Day Of Week :
+## Day Of Week
 Number Of trips for day of week.
 
-###### Script:
+###### Script
 *Get Day name form date*
 
 `> dayOfWeek<-(weekdays(as.Date(dateOfTrip,'%d-%m-%Y')))`
@@ -35,14 +35,14 @@ Number Of trips for day of week.
 
 `> groupByDayOfWeek<-table(d[order(d$dayOfWeek),])`
 
-###### Command:
+###### Command
 `> barplot(groupByDayOfWeek,main="Day Of Week",ylab="Freq")`
 
  
 ## Top Station trips
 Find Stations who had highest and lowest number of trips.
 
-## Scripts To Find Top 5 City:
+## Scripts To Find Top 5 City
 *Get Grouped values for all stations.*
 
 `> groupByStation←table(dtrips$to_station_name)`
@@ -56,10 +56,10 @@ Find Stations who had highest and lowest number of trips.
 `> View(groupByStation[orderByFreqDesc])`
 `> top5City <- c(groupByStation[orderByFreq][1:5])`
 
-###### Command:
+###### Command
 `> barplot(top5City,main="Top 5 City Trips",ylab="Freq",ylim=c(0,20000))`
 
-## Scripts To Find Bottom 5 City:
+## Scripts To Find Bottom 5 City
 
 *Get Grouped values for all stations.*
 
@@ -74,44 +74,44 @@ Find Stations who had highest and lowest number of trips.
 `> View(groupByStation[orderByFreq])`		
 `> bottom5City <- c(groupByStation[orderByFreq][1:5])`
 
-###### Command:
+###### Command
 `> barplot(bottom5City,main="Bottom 5 City Trips",ylab="Freq",ylim=c(0,100))`
 
 
-## Trips Per Station:
+## Trips Per Station
 *Graph shows number of trips per stations.*
-######Command:
+######Command
 `> barplot(table(dtrips$to_station_name),ylab="Frequency",main="Frequency Per Station",xla="Station Name",ylim=c(0,20000))`
 
 
-## User Type Graph:
+## User Type Graph
 *Graph shows Roughly equal number of Customer and Subscribers.*
-###### Command:
+###### Command
 `> barplot(table(dtrips$usertype),ylab="Frequency",main="Types Of User",xla="UserType",ylim=c(0,500000))`
 
 
-## Gender Graph:
+## Gender Graph
 *Almost half of the user do not provide their Gender information.*
-###### Command:
+###### Command
 `> barplot(table(dtrips$gender),ylab="Frequency",main="Gender Of People",xla="Gender",ylim=c(0,500000))`
  
-##Month:
+##Month
 Number of trips in Month
 
-###### Script:
+###### Script
 `> month <- format(as.POSIXct(dtrips$starttime) ,format = "%m")`
 `> View(month)`
 `> groupByMonth<-table(month)`
 
-###### Command:
+###### Command
 `> barplot(groupByMonth,main="Month Trips",ylab="Freq")`
 
  
  
-##Following Command is used to remove exponential Number Format  
+#### Following Command is used to remove exponential Number Format  
 `> options(scipen = 999)`
 
-##Extra Commands Used:
+#### Extra Commands Used
 `timeOfTrip <- format(as.POSIXct(dtrips$starttime) ,format = "%H:%M")`
 `dateOfTrip <- as.Date(dtrips$starttime)`
 
