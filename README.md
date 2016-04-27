@@ -114,6 +114,7 @@ From Graph We can say that Most number of trips in Fall.
 `> dtrips$month<-months(as.Date(dtrips$starttime))
 
 *Find Season*
+
 `> dtirps$season[dtrips$month=="January"] <- "Winter"`
 `> dtrips$season[dtrips$month=="February"] <- "Winter"`
 `> dtrips$season[dtrips$month=="March"] <- "Spring"`
