@@ -14,6 +14,7 @@ Find number of trips based on hour of the day.
 ###### Command
 `> barplot((groupByHour), beside = TRUE, col = c("green", "black"),main="Hour of Day",ylab="Freq")`
  
+![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/HourOfDay.png) 
  
 ## Day Of Week
 Number Of trips for day of week.
@@ -38,6 +39,7 @@ Number Of trips for day of week.
 ###### Command
 `> barplot(groupByDayOfWeek,main="Day Of Week",ylab="Freq")`
 
+![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/DayOfWeek.png) 
  
 ## Top Station trips
 Find Stations who had highest and lowest number of trips.
@@ -59,6 +61,8 @@ Find Stations who had highest and lowest number of trips.
 ###### Command
 `> barplot(top5City,main="Top 5 City Trips",ylab="Freq",ylim=c(0,20000))`
 
+![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/Top5Station.png) 
+
 ## Scripts To Find Bottom 5 City
 
 *Get Grouped values for all stations.*
@@ -77,23 +81,28 @@ Find Stations who had highest and lowest number of trips.
 ###### Command
 `> barplot(bottom5City,main="Bottom 5 City Trips",ylab="Freq",ylim=c(0,100))`
 
+![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/Bottom5Stations.png) 
 
 ## Trips Per Station
 *Graph shows number of trips per stations.*
 ######Command
 `> barplot(table(dtrips$to_station_name),ylab="Frequency",main="Frequency Per Station",xla="Station Name",ylim=c(0,20000))`
 
+![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/FreqPerStation.png) 
 
 ## User Type Graph
 *Graph shows Roughly equal number of Customer and Subscribers.*
 ###### Command
 `> barplot(table(dtrips$usertype),ylab="Frequency",main="Types Of User",xla="UserType",ylim=c(0,500000))`
 
+![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/TypesOfUser.png) 
 
 ## Gender Graph
 *Almost half of the user do not provide their Gender information.*
 ###### Command
 `> barplot(table(dtrips$gender),ylab="Frequency",main="Gender Of People",xla="Gender",ylim=c(0,500000))`
+ 
+ ![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/Gender.png) 
  
 ##Month
 Number of trips in Month
@@ -105,6 +114,8 @@ Number of trips in Month
 
 ###### Command
 `> barplot(groupByMonth,main="Month Trips",ylab="Freq")`
+
+![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/MonthTrips.png) 
 
 ##Month & Seasons:
 From Graph We can say that Most number of trips in Fall.
@@ -143,6 +154,7 @@ From Graph We can say that Most number of trips in Fall.
 ###### Command:
 `> barplot(table(dtrips$season), main="Season")`
  
+ ![alt tag](https://github.com/JBaba/BigDataAssignments/blob/master/images/Season.png) 
  
 #### Following Command is used to remove exponential Number Format  
 `> options(scipen = 999)`
