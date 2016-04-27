@@ -111,7 +111,7 @@ From Graph We can say that Most number of trips in Fall.
 
 ###### Script:
 *Find Month*
-`> dtrips$month<-months(as.Date(dtrips$starttime))
+`> dtrips$month<-months(as.Date(dtrips$starttime))`
 
 *Find Season*
 
