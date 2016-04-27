@@ -106,6 +106,29 @@ Number of trips in Month
 ###### Command
 `> barplot(groupByMonth,main="Month Trips",ylab="Freq")`
 
+##Month & Seasons:
+From Graph We can say that Most number of trips in Fall.
+
+###### Script:
+*Find Month*
+`> dtrips$month<-months(as.Date(dtrips$starttime))
+
+*Find Season*
+`> dtirps$season[dtrips$month=="January"] <- "Winter"`
+`> dtrips$season[dtrips$month=="February"] <- "Winter"`
+`> dtrips$season[dtrips$month=="March"] <- "Spring"`
+`> dtrips$season[dtrips$month=="April"] <- "Spring"`
+`> dtrips$season[dtrips$month=="May"] <- "Spring"`
+`> dtrips$season[dtrips$month=="June"] <- "Summer"`
+`> dtrips$season[dtrips$month=="July"] <- "Summer"`
+`> dtrips$season[dtrips$month=="August"] <- "Summer"`
+`> dtrips$season[dtrips$month=="September"] <- "Fall"`
+`> dtrips$season[dtrips$month=="October"] <- "Fall"`
+`> dtrips$season[dtrips$month=="November"] <- "Fall"`
+`> dtrips$season[dtrips$month=="December"] <- "Winter"`
+
+###### Command:
+`> barplot(table(dtrips$season), main="Season")`
  
  
 #### Following Command is used to remove exponential Number Format  
