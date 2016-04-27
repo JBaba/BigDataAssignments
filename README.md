@@ -116,16 +116,27 @@ From Graph We can say that Most number of trips in Fall.
 *Find Season*
 
 `> dtirps$season[dtrips$month=="January"] <- "Winter"`
+
 `> dtrips$season[dtrips$month=="February"] <- "Winter"`
+
 `> dtrips$season[dtrips$month=="March"] <- "Spring"`
+
 `> dtrips$season[dtrips$month=="April"] <- "Spring"`
+
 `> dtrips$season[dtrips$month=="May"] <- "Spring"`
+
 `> dtrips$season[dtrips$month=="June"] <- "Summer"`
+
 `> dtrips$season[dtrips$month=="July"] <- "Summer"`
+
 `> dtrips$season[dtrips$month=="August"] <- "Summer"`
+
 `> dtrips$season[dtrips$month=="September"] <- "Fall"`
+
 `> dtrips$season[dtrips$month=="October"] <- "Fall"`
+
 `> dtrips$season[dtrips$month=="November"] <- "Fall"`
+
 `> dtrips$season[dtrips$month=="December"] <- "Winter"`
 
 ###### Command:
