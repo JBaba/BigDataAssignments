@@ -56,6 +56,7 @@ Find Stations who had highest and lowest number of trips.
 *Apply Desc Order Function to our Stations.*
 
 `> View(groupByStation[orderByFreqDesc])`
+
 `> top5City <- c(groupByStation[orderByFreq][1:5])`
 
 ###### Command
@@ -75,7 +76,8 @@ Find Stations who had highest and lowest number of trips.
 	
 *Apply Order Function to our Stations.*
 
-`> View(groupByStation[orderByFreq])`		
+`> View(groupByStation[orderByFreq])`	
+
 `> bottom5City <- c(groupByStation[orderByFreq][1:5])`
 
 ###### Command
@@ -109,7 +111,9 @@ Number of trips in Month
 
 ###### Script
 `> month <- format(as.POSIXct(dtrips$starttime) ,format = "%m")`
+
 `> View(month)`
+
 `> groupByMonth<-table(month)`
 
 ###### Command
